@@ -1,8 +1,9 @@
 <h1>Movies:</h1>
 <ul><% @movies.each do |movie| %>
-   
-    <li><%= movie.name %></li>
+    <li><a href="/movies/<%= movie.id%>"><%= movie.name %></a></li>
+        
 <% end %></ul>
+
 
 
 
@@ -11,4 +12,4 @@
     <a href="/logout">Log out here</a>
 <% end %>
 
- form:POST
+ 

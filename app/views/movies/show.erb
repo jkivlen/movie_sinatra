@@ -1,0 +1,12 @@
+<h1> <%= @movie.name %> </h1>
+<h2>Year: <%= @movie.year %> </h2>
+<h4>Age: <%= @movie.genre %></h4>
+
+<a href="/movies/<%= @movie.id %>/edit">Edit </a> <%= @movie.name %>
+
+<a href="/movies/<%= @movie.id %>/edit">Edit <%= @movie.name %></a>
+
+<form method="POST" action="/movies/<%= @movie.id %>">
+    <input type="hidden" value="DELETE" name="_method">
+    <input type="submit" value="Delete">    
+</form>
