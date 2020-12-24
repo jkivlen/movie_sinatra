@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
     end
 
     post '/movies' do
-        movies = Movie.create(params)
+        movie = current_user.movies.create(params)
         redirect "/movies"
 
     end
@@ -23,25 +23,36 @@ class MoviesController < ApplicationController
             erb :"movies/show"
         else
             redirect "/movies"
+        end
     end
 
    get '/movies/:id/edit' do
         @movie = Movie.find_by(id: params[:id])
-
-
-    erb :"movies/edit"
+        if @movie.user == current_user
+            erb :"movies/edit"
+        else
+            redirect to "/movies"
+        end
    end
 
    patch "/movies/:id/edit" do
-    @movie = Movie.find_by(id: params[:id])
-    @movie.update(params[:movie])
-    redirect to "/movies/#{@movie.id}"
+        @movie = Movie.find_by(id: params[:id])
+        if @movie.user == current_user
+            @movie.update(params[:movie])
+            redirect to "/movies/#{@movie.id}"
+        else
+            redirect to "/movies"
+        end
    end
 
    delete "/movies/:id" do
         @movie = Movie.find_by(id: params[:id])
-        @movie.destroy
-        redirect to "/movies"
+        if @movie.user == current_user
+            @movie.destroy
+            redirect to "/movies"
+        else
+            redirect to "/movies"
+        end
    end
 
 

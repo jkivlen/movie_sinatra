@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     end
 
     post "/signup" do
-    
+        
         # if params[:user].values.any?{|value| value.blank?}
         if params[:user][:username] == "" || params[:user][:password] == ""
 
