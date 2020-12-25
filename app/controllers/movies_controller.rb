@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
         if @movie
             erb :"movies/show"
         else
-            redirect "/movies"
+            redirect to "/movies"
         end
     end
 
