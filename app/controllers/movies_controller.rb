@@ -6,9 +6,12 @@ class MoviesController < ApplicationController
     end
 
     post '/movies' do
-        movie = current_user.movies.create(params)
-        redirect "/movies"
-
+        if !logged_in?
+            redirect "/"
+        else
+            movie = current_user.movies.create(params)
+            redirect "/movies"
+        end
     end
 
     get "/movies" do           #index - loads all the movies
