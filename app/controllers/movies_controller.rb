@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
             redirect "/"
         else
             movie = current_user.movies.create(params)
-            flash[:message] = "Your movie was added"
+            flash[:message] = "#{movie.name} was added!"
             redirect "/movies"
         end
     end
