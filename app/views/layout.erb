@@ -15,9 +15,11 @@
   </head>
   <body>
     <div class="nav">
-      <a href="/movies/new">Create Movie</a>
-      <a href="/movies">All Movies</a>
-       <a href="/logout">Log Out</a>
+      <% if logged_in? %>
+        <a href="/movies/new">Create Movie</a>
+        <a href="/movies">All Movies</a>
+        <a href="/logout">Log Out</a>
+      <% end %>
     </div>
     <div class="wrapper">
 
@@ -25,7 +27,8 @@
 
       <footer class="branding">
       <a href="/movies">Movies</a>
-        <small>&copy; 2020 <strong>MovieSinatra</strong></small>
+        <small>&copy; 2020 <strong>MovieSinatra</strong></small><br>
+      <a href="/login">Log In</a>  
       </footer>
     </div>
 
