@@ -16,11 +16,14 @@
   <body>
     <div class="nav">
       <% if logged_in? %>
-        <a href="/movies/new">Create Movie</a>
+        <a href="/movies/new">Add A Movie</a>
         <a href="/movies">All Movies</a>
         <a href="/logout">Log Out</a>
       <% end %>
     </div>
+    <% if flash[:message] %>
+      <h3><%= flash[:message] %></h3>
+    <% end %>
     <div class="wrapper">
 
         <%= yield %>

@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, 'top_session'
+    register Sinatra::Flash
   end
 
   get "/" do
@@ -15,10 +16,6 @@ class ApplicationController < Sinatra::Base
     else
       erb :welcome
     end
-  end
-
-  get "/hello_world" do
-    erb :hello_world
   end
 
   helpers do

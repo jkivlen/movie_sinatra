@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         
         # if params[:user].values.any?{|value| value.blank?}
         if params[:user][:username] == "" || params[:user][:password] == ""
-
+            flash[:message] = "Your username or password was left blank.  Pleasey try again."
             redirect to "/signup" 
         else
 
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             redirect to "/movies"
         else
+            flash[:message] = "Your credentials were invalid.  Please sign up or try again"
             redirect to "/login"
         end
     end
@@ -36,6 +37,7 @@ class UsersController < ApplicationController
 
     get "/logout" do
         session.clear
+        flash[:message] = "You are now logged out"
         redirect to '/login'
 
     end
