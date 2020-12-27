@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
 
     post '/movies' do
         if !logged_in?
-            flash[:message] = "You must be logged in to add a movie.  Please log in"
+            flash[:message] = "You must be logged in to add a movie.  Please log in or sign up"
             redirect "/"
         else
             movie = current_user.movies.create(params)

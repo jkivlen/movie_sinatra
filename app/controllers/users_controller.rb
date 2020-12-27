@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         
         # if params[:user].values.any?{|value| value.blank?}
         if params[:user][:username] == "" || params[:user][:password] == ""
-            flash[:message] = "Your username or password was left blank.  Please try again."
+            flash[:message] = "Your username or password were left blank.  Please try again."
             redirect to "/signup" 
         else
 
