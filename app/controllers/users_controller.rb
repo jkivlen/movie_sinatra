@@ -6,9 +6,13 @@ class UsersController < ApplicationController
 
     post "/signup" do
         
-        # if params[:user].values.any?{|value| value.blank?}
+        user = User.find_by(username: params[:user][:username])
+        
         if params[:user][:username] == "" || params[:user][:password] == ""
             flash[:message] = "Your username or password were left blank.  Please try again."
+            redirect to "/signup" 
+        elsif user
+            flash[:message] = "User already exists.  Please try again."
             redirect to "/signup" 
         else
 

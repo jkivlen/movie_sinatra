@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
         end
     end
 
-    get "/movies" do           #index - loads all the movies
+    get "/movies" do           
         @movies = Movie.all
         
         erb :"movies/index"

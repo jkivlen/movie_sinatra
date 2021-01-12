@@ -1,7 +1,31 @@
-A simple Movie app that allows users to sign up, log in and add movies with the name, year it was made and genre of the movie.
-Users can also edit and delete the movies they add.
+Movie Sinatra App
 
-LICENSE
+Description:
+
+This sinatra app will allow users to sign up, log in and add movies to the app with attributes for the movie's name, year and genre.  Users can edit or delete their entries.  They cannot edit or delete movies added by other users.  
+
+Installation:
+
+To open the movie sinatra app you must enter "git clone https://github.com/jkivlen/movie_sinatra" into the terminal.
+
+To work on this app you will need to install the gems in the gemfile.  Enter the "bundle install" command in the terminal to do this.  
+
+Contributing:
+Please refer to each project's style and contributing guidelines for submitting patches and additions.  In general, we follow the "fork and pull" Git workflow.
+
+1 Fork the repo on GitHub https://github.com/jkivlen/movie_sinatra
+2 Clone the project to your own machine
+3 Commit changes to your own branch
+4 Push your work back up to your fork
+5 Submit a Pull request so that we can review your changes
+
+
+Support:
+
+Any questions about the sinatra app can be directed to jimmykivlen@gmail.com
+
+
+LICENSE:
 
 Copyright <2020> <James Kivlen>
 
